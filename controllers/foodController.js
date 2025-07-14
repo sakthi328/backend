@@ -7,7 +7,8 @@ exports.ListFoods = async (req, res) => {
         const foods = await Food.find();
         res.status(200).send(foods);
     } catch (error) {
-        res.status(500).send({ error: "Failed to fetch foods" });
+        res.status(500).send({ error: "Failed to fetch foods" ,Error:error.toString()});
+        console.log(error)
     }
 }
 
